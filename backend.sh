@@ -36,5 +36,11 @@ VALIDATE $? "Enabling nodejs:20 version"
 dnf install nodejs -y &>>$LOGFILE
 VALIDATE $? "Installing nodejs"
 
-useradd expense &>>$LOGFILE
-VALIDATE $? "Create expense user"
+id expense -y &>>$LOGFILE
+if[ $? -ne 0 ]
+then
+    useradd expense -y &>>$LOGFILE
+    VALIDATE $? "Creating expense user"
+else  
+     echo -e "Expenses user alredy creaated...$Y SKIPPING $N" 
+fi
