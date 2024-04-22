@@ -8,10 +8,8 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-
 echo "please enter DB password:"
 read  mysql_root_password
-
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -25,7 +23,7 @@ else
 
 if [ $USERID -ne 0 ]
 then
-   echo "please ru this script with root access."
+   echo "please run this script with root access."
    exit 1 # manually exit if error comes.
 else
      echo "you are super user."
