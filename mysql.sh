@@ -43,7 +43,6 @@ VALIDATE $? "starting MYSQL server"
 
 # below code will be useful for idempotent nature
 mysql -h db.devopshub.shop -uroot -p${mysql_root_password} -e'show databases;' &>>$LOGFILE
-
 if [ $? -ne 0 ]
 then 
    mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$LOGFILE
