@@ -49,7 +49,7 @@ then
    VALIDATE $? "MYSQL Root password setup"
 else 
     echo -e "MYSQL Root Password is already setup...$Y SKIPPING $N"
-    fi 
+fi 
     
 
 
