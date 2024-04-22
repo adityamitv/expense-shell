@@ -45,7 +45,7 @@ VALIDATE $? "starting MYSQL server"
 mysql -h db.devopshub.shop -uroot -p${mysql_root_password} -e 'show databases;' &>>$LOGFILE
 if  [ $? -ne 0 ]
 then 
-   mysql_secure_installation --set-root-pass ${mysql_root_password} &>>?LOGFILE
+   mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$LOGFILE
    VALIDATE $? "MYSQL Root password setup"
 else 
     echo -e "MYSQL Root Password is already setup...$Y SKIPPING $N"
