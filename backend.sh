@@ -66,7 +66,6 @@ VALIDATE $? "installing nodejd dependeices"
 cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.service &>>$LOGFILE
 VALIDATE $? "Copied backend service"
 
-
 systemctl daemon-reload &>>$LOGFILE
 VALIDATE $? "Daemon Reloaded"
 
@@ -80,7 +79,7 @@ dnf install mysql -y &>>$LOGFILE
 VALIDATE $? "Installing MYSQL Client"
 
 mysql -h db.devopshub.shop -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGFILE
-VALIDATE $? "Schema Loading
+VALIDATE $? "Schema Loading"
 
 systemctl restart backend &>>$LOGFILE
 VALIDATE $? "Restarting Backend"
