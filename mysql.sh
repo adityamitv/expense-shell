@@ -42,7 +42,7 @@ VALIDATE $? "starting MYSQL server"
 # VALIDATE $? "setting up root password"
 
 # below code will be useful for idempotent nature
-mysql -h db.devopshub.shop -uroot -p${mysql_root_password} -e 'show databases;' &>>$LOGFILE
+mysql -h db.devopshub.shop -uroot -p${mysql_root_password} -e'show databases;' &>>$LOGFILE
 
 if  [ $? -ne 0 ]
 then 
